@@ -21,10 +21,14 @@ export default function Navbar() {
           >
            
           </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          <Typography align="left" variant="h6" component="div" sx={{ flexGrow: 1 }}>
             FunnyFinder
           </Typography>
-          <Button color="inherit">Login</Button>
+          <Button href="#/events/" color="inherit">Events</Button>
+          <Typography align="right" variant="body1" component="div" sx={{ flexGrow: 1 }}>
+            All the funny. All in one place
+          </Typography>
+          
         </Toolbar>
       </AppBar>
     </Box>

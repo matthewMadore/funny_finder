@@ -2,7 +2,7 @@ import { Card, CardContent, Typography } from '@mui/material';
 import * as React from 'react';
 
 export default function EventCard ({eventname,eventlocation, eventtime}) {
-	return <Card variant="outlined">
+	return <Card width="25vw" variant="outlined">
 			<CardContent> 
 			  <Typography variant="h5" color="text.secondary" gutterBottom>
         {eventname}

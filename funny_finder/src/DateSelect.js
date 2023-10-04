@@ -11,6 +11,8 @@ export default function DateSelect({ currentDate, setCurrentDate }) {
       <DemoContainer components={['DatePicker']}>
         <DatePicker 
         label="Change Date" 
+        format="YYYY-MM-DD"
+        inputFormat="YYYY-MM-DD"
         value={dayjs(currentDate)}
         onChange={(newValue) => setCurrentDate(newValue)}
         />

@@ -3,6 +3,7 @@ import DateSelect from './DateSelect';
 import * as React from 'react';
 import { useState, useEffect } from 'react';
 import { Typography } from '@mui/material';
+import { getDate } from './helpers/getDate';
 
 
 
@@ -10,15 +11,8 @@ export default function Events ({events}) {
 
    const [currentDate, setCurrentDate] = React.useState(getDate());
    const [isOpen, setIsOpen] = React.useState(false)
-
-function getDate () { 
-    var today = new Date(),
  
-    date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
- 
-    return date
-  };
- 
+  const dt =new Date(currentDate)
 
   useEffect(() => {
    
@@ -31,7 +25,7 @@ function getDate () {
     return (
     <div>
         <Typography variant="h3">
-            Comedy Events for {currentDate.toString()}
+            Comedy Events for {dt.toDateString()}
         </Typography>
         <DateSelect currentDate={currentDate} setCurrentDate={setCurrentDate} />
         {eventlist}

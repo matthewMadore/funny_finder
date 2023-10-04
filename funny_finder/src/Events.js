@@ -1,7 +1,8 @@
 import Eventcard from './Eventcard';
-import DatePicker from './DatePicker';
+import DateSelect from './DateSelect';
 import * as React from 'react';
 import { useState, useEffect } from 'react';
+import { Typography } from '@mui/material';
 
 
 
@@ -29,9 +30,12 @@ function getDate () {
     })
     return (
     <div>
-        <button onClick={() => setIsOpen(true)}> change date </button>
-        <DatePicker open={isOpen} currentDate={currentDate} setCurrentDate={setCurrentDate} onClose={() => {setIsOpen(false)}}/>
+        <Typography variant="h3">
+            Comedy Events for {currentDate.toString()}
+        </Typography>
+        <DateSelect currentDate={currentDate} setCurrentDate={setCurrentDate} />
         {eventlist}
+        
     </div>
     )
 

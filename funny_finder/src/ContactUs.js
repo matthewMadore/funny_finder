@@ -5,30 +5,29 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import image from '/fflogo.png'
+
+
 
 export default function ContactUs() {
     return (
        
-       <Card sx={{ maxWidth: 345 }}>
+       <Card sx={{ maxWidth: 600 }}>
       <CardMedia
         component="img"
-        alt="green iguana"
-        height="150"
-        image={image}
+        alt="funnyfinderlogo"
+        height="100"
+        image="/images/fflogo.jpg"
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
-          Lizard
+          Get in Touch
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          Lizards are a widespread group of squamate reptiles, with over 6,000
-          species, ranging across all continents except Antarctica
+          Want your open mic or event listed on FunnyFinder? Interested in promoting an event? Please contact our team. 
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Share</Button>
-        <Button size="small">Learn More</Button>
+        <Button href = "mailto: caspian.alderman@gmail.com" size="small">Email FunnyFinder</Button>
       </CardActions>
     </Card>
     

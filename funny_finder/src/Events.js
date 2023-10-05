@@ -7,7 +7,10 @@ import { getDate } from './helpers/getDate';
 
 
 
-export default function Events ({events}) {
+export default function Events () {
+
+    const events = [{"eventname": "Open Mic Night", "eventlocation": "Old Salty Bar", "eventtime": "7:30 pm", "date":"10/4/2023", "eventurl": "https://oldsaltys.com/"}, {"eventname": "Joe List", "eventlocation": "Helium Comedy Club", "eventtime": "7:00 pm", "date":"10/4/2023", "eventurl": "https://portland.heliumcomedy.com/"}, {"eventname": "Joe List", "eventlocation": "Helium Comedy Club", "eventtime": "10:00 pm", "date":"10/5/2023", "eventurl": "https://portland.heliumcomedy.com/"}, {"eventname": "Improv Night", "eventlocation": "Portland Improv", "eventtime": "9:00 pm", "date":"10/5/2023", "eventurl": "https://www.curiouscomedy.org/"}  ]
+
 
    const [currentDate, setCurrentDate] = React.useState(getDate());
    const [isOpen, setIsOpen] = React.useState(false)

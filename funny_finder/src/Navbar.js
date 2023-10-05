@@ -24,7 +24,8 @@ export default function Navbar() {
           <Typography align="left" variant="h6" component="div" sx={{ flexGrow: 1 }}>
             FunnyFinder
           </Typography>
-          <Button href="#/events/" color="inherit">Events</Button>
+          <Button href="#/" color="inherit">Events</Button>
+          <Button align="right" href="#/contactus/" color="inherit">Contact Us</Button>
           <Typography align="right" variant="body1" component="div" sx={{ flexGrow: 1 }}>
             All the funny. All in one place
           </Typography>

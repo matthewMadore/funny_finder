@@ -13,7 +13,7 @@ export default function EventCard ({eventname,eventlocation, eventtime, eventurl
 			  <Typography variant="body2" color="text.secondary" gutterBottom>
         {eventtime}
               </Typography>
-			  <a href={eventurl}>
+			  <a href={eventurl} target="_blank">
 			Tickets
 		</a>
 			</CardContent>

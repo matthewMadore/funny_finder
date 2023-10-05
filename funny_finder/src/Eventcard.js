@@ -13,8 +13,8 @@ export default function EventCard ({eventname,eventlocation, eventtime, eventurl
 			  <Typography variant="body2" color="text.secondary" gutterBottom>
         {eventtime}
               </Typography>
-			  <a component="button" color="primary" onClick={()=>{window.location.replace("https://oldsaltys.com/");}}>
-			MyButton
+			  <a href={eventurl}>
+			Tickets
 		</a>
 			</CardContent>
 			</Card>

@@ -18,11 +18,13 @@ export default function Events () {
  
   const displayDate =new Date(currentDate)
   
+  function filterEvents() {const formattedDate =  new Date(currentDate).toLocaleDateString(); // Call toLocaleDateString as a function
+  setDisplayEvents(events.filter(event => event.date === formattedDate))
+  }
+  
 
   useEffect(() => {
-    const formattedDate =  new Date(currentDate).toLocaleDateString(); // Call toLocaleDateString as a function
-    setDisplayEvents(events.filter(event => event.date === formattedDate));
-    console.log(formattedDate);
+    filterEvents()
   }, [currentDate]);
 
     const eventlist = displayEvents.map((event, index) => {

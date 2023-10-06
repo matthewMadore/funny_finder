@@ -23,7 +23,7 @@ const theme = createTheme({
 
 function App() {
   return (
-    <div className='App'>
+    <div className='App' >
     <HashRouter>
      <ThemeProvider theme={theme}>
     <Navbar />

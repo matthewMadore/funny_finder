@@ -9,7 +9,7 @@ import { getDate } from './helpers/getDate';
 
 export default function Events () {
 
-    const events = [{"eventname": "Open Mic Night", "eventlocation": "Old Salty Bar", "eventtime": "7:30 pm", "date":"10/4/2023", "eventurl": "https://oldsaltys.com/"}, {"eventname": "Joe List", "eventlocation": "Helium Comedy Club", "eventtime": "7:00 pm", "date":"10/4/2023", "eventurl": "https://portland.heliumcomedy.com/"}, {"eventname": "Joe List", "eventlocation": "Helium Comedy Club", "eventtime": "10:00 pm", "date":"10/5/2023", "eventurl": "https://portland.heliumcomedy.com/"}, {"eventname": "Improv Night", "eventlocation": "Portland Improv", "eventtime": "9:00 pm", "date":"10/5/2023", "eventurl": "https://www.curiouscomedy.org/"}  ]
+    const events = [{"eventname": "Open Mic Night", "eventlocation": "Old Salty Bar", "eventtime": "7:30 pm", "date":"10/4/2023", "eventurl": "https://oldsaltys.com/", "type" : "openmic"}, {"eventname": "Joe List", "eventlocation": "Helium Comedy Club", "eventtime": "7:00 pm", "date":"10/4/2023", "eventurl": "https://portland.heliumcomedy.com/", "type" : "comedian"}, {"eventname": "Joe List", "eventlocation": "Helium Comedy Club", "eventtime": "10:00 pm", "date":"10/5/2023", "eventurl": "https://portland.heliumcomedy.com/", "type" : "comedian"}, {"eventname": "Improv Night", "eventlocation": "Portland Improv", "eventtime": "9:00 pm", "date":"10/5/2023", "eventurl": "https://www.curiouscomedy.org/", "type" : "improv"}  ]
 
 
    const [currentDate, setCurrentDate] = React.useState(getDate());
@@ -28,7 +28,7 @@ export default function Events () {
   }, [currentDate]);
 
     const eventlist = displayEvents.map((event, index) => {
-        return <Eventcard  key={index} eventname={event.eventname} eventlocation={event.eventlocation} eventtime={event.eventtime} eventurl={event.eventurl} />
+        return <Eventcard  key={index} eventname={event.eventname} eventlocation={event.eventlocation} eventtime={event.eventtime} eventurl={event.eventurl} type={event.type} />
 
     })
     return (

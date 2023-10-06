@@ -18,5 +18,6 @@ export default function DateSelect({ currentDate, setCurrentDate }) {
         />
       </DemoContainer>
     </LocalizationProvider>
+  
   );
 }

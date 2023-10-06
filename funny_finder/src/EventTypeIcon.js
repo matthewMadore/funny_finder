@@ -7,4 +7,5 @@ export default function EventTypeIcon({type}) {
     if (type === "openmic") return <OpenMicIcon/>
     if (type === "improv") return <ImprovIcon/>
     if (type === "comedian") return <ComedianIcon/>
+    return null
 }

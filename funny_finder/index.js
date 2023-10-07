@@ -1,6 +1,9 @@
 const express = require('express');
 const app = express();
 var dal = require('./dal.js');
+require('dotenv').config()
+
+
 
 
 // serve up production assets

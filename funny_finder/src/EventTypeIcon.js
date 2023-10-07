@@ -9,3 +9,4 @@ export default function EventTypeIcon({type}) {
     if (type === "comedian") return <ComedianIcon/>
     return null
 }
+

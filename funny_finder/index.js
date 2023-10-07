@@ -1,5 +1,8 @@
 const express = require('express');
 const app = express();
+var dal = require('./dal.js');
+
+
 // serve up production assets
 app.use(express.static('build'));
 // let the react app to handle any unknown routes 

@@ -25,4 +25,16 @@ async function run() {
     await client.close();
   }
 }
+
+function all(){
+    return new Promise((resolve, reject) => {    
+        const FunnyFinderDb = db
+            .collection('Events')
+            .find({})
+            .toArray(function(err, docs) {
+                err ? reject(err) : resolve(docs);
+        });    
+    })
+}
+
 run().catch(console.dir);

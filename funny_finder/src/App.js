@@ -13,10 +13,10 @@ import ContactUs from './ContactUs';
 const theme = createTheme({
   palette: {
     primary: {
-        main: '#DC143C'
+        main: '#F15025'
     },
     secondary: {
-      main: '#E33E7F'
+      main: '#CED0CE'
     }
   }
 });
@@ -27,7 +27,7 @@ function App() {
     <HashRouter>
      <ThemeProvider theme={theme}>
     <Navbar />
-     <div class='right-container'>
+     <div class='container-lg'>
       <Routes>
      <Route path="/" element={<Events/>}/>
      <Route path="/contactus" element={<ContactUs/>}/>

@@ -4,7 +4,8 @@ import * as React from 'react';
 import { useState, useEffect } from 'react';
 import { Typography } from '@mui/material';
 import { getDate } from './helpers/getDate';
-
+import FeaturedEventCard from './FeaturedEventCard';
+import VideoPlayer from './VideoEmbed';
 
 
 export default function Events () {
@@ -15,6 +16,8 @@ export default function Events () {
    const [isOpen, setIsOpen] = React.useState(false)
    const [displayEvents, setDisplayEvents] = React.useState([])
    const displayDate =new Date(currentDate)
+   const featuredEvent = {"name":"Dan Soder Live Taping","location":"Helium Comedy Club","time":"10:00 PM","date":"11/15/2023","day":null,"eventurl":"https://portland.heliumcomedy.com/events/82732","type":"comedian"}
+const embedId = 'K0sRDBeX4EQ?si=rW8NEI8XGmouJPrQ'
 
    useEffect(() => {
     const fetchEvents = async () => {
@@ -28,6 +31,7 @@ export default function Events () {
     }
 
     fetchEvents()
+    console.log(events)
   }, []);
 
  
@@ -43,24 +47,31 @@ export default function Events () {
 
   useEffect(() => {
     filterEvents()
-  }, [currentDate]);
+  }, [currentDate, events]);
 
 
-    const eventlist = displayEvents.map((event, index) => {
-        return <Eventcard  key={index} eventname={event.name} eventlocation={event.location} eventtime={event.time} eventurl={event.eventurl} type={event.type} />
+  const eventlist = displayEvents.map((event, index) => (
+    <Eventcard key={index} eventname={event.name} eventlocation={event.location} eventtime={event.time} eventurl={event.eventurl} type={event.type} />
+  ));
 
-    })
-    return (
-    <div>
+  return (
+    <div style={{ display: 'flex', flexDirection: 'row' }}>
+      <div style={{ flex: '3', textAlign: 'center', padding: '20px' }}>
         <Typography variant="h3">
-            Comedy Events for {displayDate.toLocaleDateString()}
+          Comedy Events for {displayDate.toLocaleDateString()}
         </Typography>
         <DateSelect currentDate={currentDate} setCurrentDate={setCurrentDate} />
         {eventlist}
-        
+      </div>
+      <div style={{ flex: '1', padding: '20px' }}>
+        <Typography variant="h5">
+          Featured Event
+        </Typography>
+        <FeaturedEventCard featuredEvent={featuredEvent} />
+        <VideoPlayer embedId={embedId} />
+      </div>
     </div>
-    )
-
+  );
 }
 
 

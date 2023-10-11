@@ -1,9 +1,16 @@
-import { Card, CardContent, Typography } from '@mui/material';
+import { Card, CardContent, Typography, Link, Icon } from '@mui/material';
 import * as React from 'react';
 import EventTypeIcon from './EventTypeIcon';
+import MapIcon from './icons/MapIcon';
+import IconButton from '@mui/material/IconButton';
+
 
 
 export default function EventCard ({eventname,eventlocation, eventtime, eventurl, type}) {
+	const openInNewTab = (url) => {
+		window.open(url, "_blank", "noreferrer");}
+		const mapLink = 'http://maps.google.com/?q=' + eventlocation.replace(/ /g, '+')
+	
 	return (
 	<Card width="25vw" variant="outlined"  sx={{ m: 0.5 }} >
 			<CardContent> 
@@ -12,7 +19,10 @@ export default function EventCard ({eventname,eventlocation, eventtime, eventurl
         {eventname}
               </Typography>
 			  <Typography variant="body1" color="text.secondary" gutterBottom>
-        {eventlocation}
+			  {eventlocation}
+			  <IconButton size="small" onClick={() => {openInNewTab(mapLink)}}>
+			  <MapIcon />
+			  </IconButton>
               </Typography>
 			  <Typography variant="body2" color="text.secondary" gutterBottom>
         {eventtime}

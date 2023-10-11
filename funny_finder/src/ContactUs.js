@@ -11,7 +11,7 @@ import Typography from '@mui/material/Typography';
 export default function ContactUs() {
     return (
        
-       <Card sx={{ maxWidth: 600 }}>
+       <Card sx={{ maxWidth: 600, m: 1 }}>
       <CardMedia
         component="img"
         alt="funnyfinderlogo"

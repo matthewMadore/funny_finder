@@ -11,6 +11,9 @@ import ContactUs from './ContactUs';
 
 
 const theme = createTheme({
+  typography: {
+    fontFamily: 'Oswald',
+  },
   palette: {
     primary: {
         main: '#F15025'

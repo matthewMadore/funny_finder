@@ -34,6 +34,24 @@ const embedId = 'K0sRDBeX4EQ?si=rW8NEI8XGmouJPrQ'
     console.log(events)
   }, []);
 
+  useEffect(() => {
+    const fetchTmEvents = async () => {
+      try {
+        const response = await fetch('/api/ticketmaster-events');
+        const json = await response.json();
+  
+        if (response.ok) {
+          setEvents(json);
+          console.log(json);
+        }
+      } catch (error) {
+        console.error('Error fetching Ticketmaster events:', error);
+      }
+    };
+  
+    fetchTmEvents();
+  }, []);
+
  
   
   
@@ -56,7 +74,7 @@ const embedId = 'K0sRDBeX4EQ?si=rW8NEI8XGmouJPrQ'
 
   return (
     <div style={{ display: 'flex', flexDirection: 'row' }}>
-      <div style={{ flex: '3', textAlign: 'center', padding: '20px' }}>
+      <div style={{ flex: '4', textAlign: 'center', padding: '20px' }}>
         <Typography variant="h3">
           Comedy Events for {displayDate.toLocaleDateString()}
         </Typography>

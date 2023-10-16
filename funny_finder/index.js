@@ -19,6 +19,7 @@ require('dotenv').config();
 // Middleware
 app.use(express.json())
 const eventRoutes = require('./routes/events')
+const ticketmasterRoutes = require('./routes/ticketmaster')
 
 app.use((req, res, next) => {
   console.log(req.path, req.method)
@@ -26,6 +27,7 @@ app.use((req, res, next) => {
 })
 
 app.use('/api/events', eventRoutes)
+app.use('api/ticketmaster', ticketmasterRoutes)
 
 //connect to DB
 const user = process.env.DB_USER

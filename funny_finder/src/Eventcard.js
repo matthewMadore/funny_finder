@@ -12,7 +12,7 @@ export default function EventCard ({eventname,eventlocation, eventtime, eventurl
 		const mapLink = 'http://maps.google.com/?q=' + eventlocation.replace(/ /g, '+')
 	
 	return (
-	<Card width="25vw" variant="outlined"  sx={{ m: 0.5 }} >
+	<Card  variant="outlined"  sx={{ m: 0.5, maxWidth: 700 }} >
 			<CardContent> 
 			<EventTypeIcon type={type}/>
 			  <Typography variant="h5" color="text.secondary" gutterBottom>
@@ -28,7 +28,7 @@ export default function EventCard ({eventname,eventlocation, eventtime, eventurl
         {eventtime}
               </Typography>
 			  <a href={eventurl} target="_blank">
-			Tickets
+			Event Site
 		</a>
 		
 

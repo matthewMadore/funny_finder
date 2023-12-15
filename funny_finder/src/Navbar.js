@@ -5,9 +5,26 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
+import useIsMobile from './helpers/useIsMobile';
 
 
-export default function Navbar() {
+
+
+function Navbar() {
+  
+const isMobile = useIsMobile()
+  
+  if (isMobile) return (
+    <Box sx={{ flexGrow: 1 }}>
+    <AppBar position="static">
+      <Toolbar>
+        <Typography align="center" variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          FunnyFinder
+        </Typography>
+      </Toolbar>
+    </AppBar>
+  </Box>
+  )
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
@@ -35,3 +52,6 @@ export default function Navbar() {
     </Box>
   );
 }
+
+
+export default Navbar;

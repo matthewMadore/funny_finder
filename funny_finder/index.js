@@ -54,6 +54,8 @@ app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, 'build', 'index.html'));
 });
 
+module.exports = https.createServer(options, app);
+
 // If not in production, use the port 5000
 const PORT = process.env.PORT || 5000;
 const server = https.createServer(options, app);

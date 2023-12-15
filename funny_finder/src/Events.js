@@ -6,6 +6,7 @@ import { Typography } from '@mui/material';
 import { getDate } from './helpers/getDate';
 import FeaturedEventCard from './FeaturedEventCard';
 import VideoPlayer from './VideoEmbed';
+import useIsMobile from './helpers/useIsMobile';
 
 
 export default function Events () {
@@ -18,6 +19,7 @@ export default function Events () {
    const displayDate =new Date(currentDate)
    const featuredEvent = {"name":"Dan Soder Live Taping","location":"Helium Comedy Club","time":"10:00 PM","date":"11/15/2023","day":null,"eventurl":"https://portland.heliumcomedy.com/events/82732","type":"comedian"}
 const embedId = 'K0sRDBeX4EQ?si=rW8NEI8XGmouJPrQ'
+const isMobile = useIsMobile()
 
    useEffect(() => {
     const fetchEvents = async () => {
@@ -71,6 +73,16 @@ const embedId = 'K0sRDBeX4EQ?si=rW8NEI8XGmouJPrQ'
   const eventlist = displayEvents.map((event, index) => (
     <Eventcard key={index} eventname={event.name} eventlocation={event.location} eventtime={event.time} eventurl={event.eventurl} type={event.type} />
   ));
+
+  if (isMobile) return (
+    <div style={{ flex: '4', textAlign: 'center', padding: '20px' }}>
+        <Typography variant="h3">
+          Comedy Events for {displayDate.toLocaleDateString()}
+        </Typography>
+        <DateSelect currentDate={currentDate} setCurrentDate={setCurrentDate} />
+        {eventlist}
+      </div>
+  )
 
   return (
     <div style={{ display: 'flex', flexDirection: 'row' }}>
